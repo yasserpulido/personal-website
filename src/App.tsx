@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navigation } from "./components";
+import { Credits, Navigation } from "./components";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <main>
         <Outlet />
       </main>
-      <footer>footer</footer>
+      <Credits />
     </div>
   );
 }
