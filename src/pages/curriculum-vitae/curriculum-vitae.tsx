@@ -1,6 +1,6 @@
 const CurriculumVitae = () => {
   return (
-    <article className="mt-20">
+    <article className="my-20">
       <header className="flex flex-col gap-8">
         <h1 className="text-lg text-center">About me</h1>
         <div className="flex flex-col gap-4">
@@ -130,7 +130,7 @@ const CurriculumVitae = () => {
           <p className="text-sm text-right">Argentina</p>
         </article>
       </section>
-      <hr className="my-10" />+
+      <hr className="my-10" />
       <section className="flex flex-col gap-4">
         <h1 className="text-lg text-center">Personal Projects</h1>
         <div>
