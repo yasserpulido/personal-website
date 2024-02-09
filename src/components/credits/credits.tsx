@@ -2,7 +2,7 @@ import { Github, Linkedin, Instagram } from "grommet-icons";
 
 const Credits = () => {
   return (
-    <footer className="flex items-center justify-end h-20 2xl:px-80">
+    <footer className="mt-auto flex items-center justify-end h-20 2xl:px-80">
       <ul className="flex gap-4">
         <li>
           <a
