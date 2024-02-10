@@ -3,9 +3,9 @@ import { Credits, Navigation } from "./components";
 
 function App() {
   return (
-    <div className="container flex flex-col min-h-screen mx-auto px-10">
+    <div className="container mx-auto 2xl:px-96 lg:px-64 md:px-32 sm:px-16 px-8 flex flex-col min-h-screen">
       <Navigation />
-      <main className="2xl:px-80 xl:px-40 sm:px-20">
+      <main>
         <Outlet />
       </main>
       <Credits />
