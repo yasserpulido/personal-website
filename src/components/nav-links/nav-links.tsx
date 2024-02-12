@@ -1,10 +1,25 @@
 import { NavLink } from "react-router-dom";
+import { Login, Logout } from "grommet-icons";
+import { useAuth } from "../../hooks";
+import { doSignOut } from "../../utils/auth";
 
 type NavLinksProps = {
   setIsMenuOpen: (value: boolean) => void;
+  onOpenModal: () => void;
+  openModalConfirmationWhenSignOutIsClicked: () => void;
 };
 
-const NavLinks = ({ setIsMenuOpen }: NavLinksProps) => {
+const NavLinks = ({
+  setIsMenuOpen,
+  onOpenModal,
+  openModalConfirmationWhenSignOutIsClicked,
+}: NavLinksProps) => {
+  const { userLoggedIn } = useAuth();
+
+  const handleSignOut = () => {
+    doSignOut();
+  };
+
   return (
     <>
       <li>
@@ -24,6 +39,22 @@ const NavLinks = ({ setIsMenuOpen }: NavLinksProps) => {
         >
           Blog
         </NavLink>
+      </li>
+      <li>
+        {userLoggedIn ? (
+          <button onClick={openModalConfirmationWhenSignOutIsClicked}>
+            <Logout color="black" />
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              onOpenModal();
+              setIsMenuOpen(false);
+            }}
+          >
+            <Login color="black" />
+          </button>
+        )}
       </li>
     </>
   );

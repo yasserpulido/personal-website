@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, Close } from "grommet-icons";
 import { NavLinks } from "../nav-links";
+import { ModalAuth } from "../modal-auth";
+import { ModalAuthMethods } from "../../types";
+import { Modal } from "..";
+import { doSignOut } from "../../utils/auth";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showMenuIcon, setShowMenuIcon] = useState(false);
+  const modalAuth = useRef<ModalAuthMethods>(null);
+  const modalSignOut = useRef<HTMLDialogElement | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +38,29 @@ const Navigation = () => {
     }
   }, [isMenuOpen]);
 
+  const handleOpenModal = () => {
+    if (modalAuth.current) {
+      modalAuth.current.open();
+    }
+  };
+
+  const openModalConfirmationWhenSignOutIsClicked = () => {
+    if (modalSignOut.current) {
+      modalSignOut.current.showModal();
+    }
+  };
+
+  const closeModalConfirmation = () => {
+    if (modalSignOut.current) {
+      modalSignOut.current.close();
+    }
+  };
+
+  const signOut = () => {
+    doSignOut();
+    closeModalConfirmation();
+  };
+
   return (
     <header className="flex items-center justify-between h-20">
       <p>
@@ -52,7 +81,13 @@ const Navigation = () => {
                 </button>
               </div>
               <ul className="flex flex-col items-center gap-8">
-                <NavLinks setIsMenuOpen={setIsMenuOpen} />
+                <NavLinks
+                  setIsMenuOpen={setIsMenuOpen}
+                  onOpenModal={handleOpenModal}
+                  openModalConfirmationWhenSignOutIsClicked={
+                    openModalConfirmationWhenSignOutIsClicked
+                  }
+                />
               </ul>
             </nav>
           )}
@@ -60,10 +95,45 @@ const Navigation = () => {
       ) : (
         <nav>
           <ul className="flex items-center justify-between gap-8">
-            <NavLinks setIsMenuOpen={setIsMenuOpen} />
+            <NavLinks
+              setIsMenuOpen={setIsMenuOpen}
+              onOpenModal={handleOpenModal}
+              openModalConfirmationWhenSignOutIsClicked={
+                openModalConfirmationWhenSignOutIsClicked
+              }
+            />
           </ul>
         </nav>
       )}
+      <ModalAuth ref={modalAuth} />
+      <Modal ref={modalSignOut}>
+        <section className="p-4 flex flex-col gap-4">
+          <header>
+            <h1 className="font-bold text-lg">Sign out confirmation</h1>
+          </header>
+          <hr />
+          <main>
+            <p className="text-center text-gray-500">
+              Do you want to sign out?
+            </p>
+          </main>
+          <hr />
+          <footer className="flex items-center justify-end gap-2">
+            <button
+              className="bg-green-500 text-white px-4 py-1 rounded font-bold"
+              onClick={signOut}
+            >
+              Yes
+            </button>
+            <button
+              className="px-4 py-1 font-bold"
+              onClick={closeModalConfirmation}
+            >
+              No
+            </button>
+          </footer>
+        </section>
+      </Modal>
     </header>
   );
 };
