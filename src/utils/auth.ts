@@ -58,35 +58,37 @@ export const doSignInWithEmailAndPassword = async (
     if (user) {
       return {
         error: false,
-        message: "Usuario autenticado correctamente.",
+        message: "User authenticated successfully.",
       };
     } else {
       return {
         error: true,
-        message: "Error inesperado. Por favor, inténtalo de nuevo.",
+        message: "Unexpected error. Please try again.",
       };
     }
   } catch (error) {
     if (typeof error === "object" && error !== null && "code" in error) {
       const errorCode = (error as { code: string }).code;
 
+      console.log(errorCode);
+
       if (errorCode === "auth/invalid-credential") {
         return {
           error: true,
           message:
-            "Credenciales inválidas. Por favor, verifica e inténtalo de nuevo.",
+            "Invalid credentials. Please verify and try again.",
         };
       } else {
         return {
           error: true,
           message:
-            "Error desconocido. Por favor, inténtalo de nuevo más tarde.",
+            "Unknown error. Please try again later.",
         };
       }
     } else {
       return {
         error: true,
-        message: "Error inesperado. Por favor, inténtalo de nuevo.",
+        message: "Unexpected error. Please try again.",
       };
     }
   }

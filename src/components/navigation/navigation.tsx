@@ -4,14 +4,16 @@ import { Menu, Close } from "grommet-icons";
 import { NavLinks } from "../nav-links";
 import { ModalAuth } from "../modal-auth";
 import { ModalAuthMethods } from "../../types";
-import { Modal } from "..";
+import { Modal, Toast } from "..";
 import { doSignOut } from "../../utils/auth";
+import { Toast as ToastType } from "../../types";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showMenuIcon, setShowMenuIcon] = useState(false);
   const modalAuth = useRef<ModalAuthMethods>(null);
   const modalSignOut = useRef<HTMLDialogElement | null>(null);
+  const [toast, setToast] = useState<ToastType>({ message: "", type: "none" });
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,6 +61,7 @@ const Navigation = () => {
   const signOut = () => {
     doSignOut();
     closeModalConfirmation();
+    setToast({ message: "You have signed out", type: "success" });
   };
 
   return (
@@ -104,6 +107,12 @@ const Navigation = () => {
             />
           </ul>
         </nav>
+      )}
+      {toast.type !== "none" && (
+        <Toast
+          status={toast}
+          reset={() => setToast({ message: "", type: "none" })}
+        />
       )}
       <ModalAuth ref={modalAuth} />
       <Modal ref={modalSignOut}>

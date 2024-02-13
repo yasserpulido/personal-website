@@ -6,6 +6,8 @@ import {
   doSignInWithEmailAndPassword,
 } from "../../utils/auth";
 import { ModalAuthMethods } from "../../types";
+import { Toast } from "../toast";
+import { Toast as ToastType } from "../../types";
 
 const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
   const [register, setRegister] = useState(false);
@@ -13,6 +15,7 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
   const dialog = useRef<HTMLDialogElement | null>(null);
   const content = useRef<HTMLDivElement | null>(null);
   const modal = document.getElementById("modal");
+  const [toast, setToast] = useState<ToastType>({ message: "", type: "none" });
 
   useImperativeHandle(ref, () => ({
     open: () => {
@@ -56,27 +59,31 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
       if (register) {
         const result = await doCreateUserWithEmailAndPassword(email, password);
 
+        closeModal();
+
         if (result.status === "success") {
-          console.log("User created successfully");
+          setToast({ type: "success", message: result.message });
         } else {
-          console.error(result.message);
+          setToast({ type: "error", message: result.message });
         }
       } else {
         const result = await doSignInWithEmailAndPassword(email, password);
 
+        closeModal();
+
         if (!result.error) {
-          console.log(result.message);
-          closeModal();
+          setToast({ type: "success", message: result.message });
         } else {
-          console.error(result.message);
+          setToast({ type: "error", message: result.message });
         }
       }
-
-      setIsLoading(false);
     } catch (error) {
-      console.error(error);
-      setIsLoading(false);
+      closeModal();
+      setToast({ type: "error", message: "An unknown error occurred." });
     }
+
+    setIsLoading(false);
+    form.reset();
   };
 
   const handleDialogClick = (
@@ -95,75 +102,89 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
 
   if (modal) {
     return createPortal(
-      <dialog
-        ref={dialog}
-        className="border-2 border-black rounded-md"
-        onClick={handleDialogClick}
-      >
-        <section ref={content} className="p-14 flex flex-col gap-12">
-          <header className="text-center">
-            <h1 className="text-2xl font-bold">
-              {register ? "Register" : "Login"}
-            </h1>
-          </header>
-          <main>
-            <form className="flex flex-col gap-12" onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-4">
-                <div>
-                  <label className="text-sm" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    className="border-b-2 border-black w-full outline-none"
-                    type="email"
-                    name="email"
-                    placeholder="type your email here"
-                    required
-                  />
-                </div>
-                <div className="h-20">
-                  <label className="text-sm" htmlFor="password">
-                    Password
-                  </label>
-                  <input
-                    className="border-b-2 border-black w-full outline-none"
-                    type="password"
-                    name="password"
-                    required
-                    placeholder="type your password here"
-                  />
-                  {!register && (
-                    <p className="text-sm text-right">
-                      <button type="button" className="underline text-blue-500">
-                        Forgot password?
-                      </button>
-                    </p>
-                  )}
-                </div>
-              </div>
-              <button
-                className="bg-green-500 h-10 text-white tracking-wider rounded-md"
-                type="submit"
-              >
+      <>
+        {toast.type !== "none" && (
+          <Toast
+            status={toast}
+            reset={() => setToast({ message: "", type: "none" })}
+          />
+        )}
+        <dialog
+          ref={dialog}
+          className="rounded-md drop-shadow-lg backdrop:bg-black/50"
+          onClick={handleDialogClick}
+        >
+          <section ref={content} className="p-14 flex flex-col gap-12">
+            <header className="text-center">
+              <h1 className="text-2xl font-bold">
                 {register ? "Register" : "Login"}
-              </button>
-              <p className="text-center">
-                {register
-                  ? "Already have an account?"
-                  : "Don't have an account?"}{" "}
+              </h1>
+            </header>
+            <main>
+              <form className="flex flex-col gap-12" onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-4">
+                  <div>
+                    <label className="text-sm" htmlFor="email">
+                      Email
+                    </label>
+                    <input
+                      className="border-b-2 border-black w-full outline-none"
+                      type="email"
+                      name="email"
+                      placeholder="type your email here"
+                      required
+                    />
+                  </div>
+                  <div className="h-20">
+                    <label className="text-sm" htmlFor="password">
+                      Password
+                    </label>
+                    <input
+                      className="border-b-2 border-black w-full outline-none"
+                      type="password"
+                      name="password"
+                      required
+                      placeholder="type your password here"
+                    />
+                    {!register && (
+                      <p className="text-sm text-right">
+                        <button
+                          type="button"
+                          className="underline text-blue-500"
+                        >
+                          Forgot password?
+                        </button>
+                      </p>
+                    )}
+                  </div>
+                </div>
                 <button
-                  type="button"
-                  onClick={() => setRegister((prevState) => !prevState)}
-                  className="underline text-blue-500"
+                  className={`${
+                    isLoading ? "bg-gray-500" : "bg-green-500"
+                  } h-10 text-white tracking-wider rounded-md font-bold`}
+                  type="submit"
                   disabled={isLoading}
                 >
-                  {register ? "Login" : "Register"}
+                  {register ? "Register" : "Login"}
                 </button>
-              </p>
-            </form>
-          </main>
-        </section>
-      </dialog>,
+                <p className="text-center">
+                  {register
+                    ? "Already have an account?"
+                    : "Don't have an account?"}{" "}
+                  <button
+                    type="button"
+                    onClick={() => setRegister((prevState) => !prevState)}
+                    className="underline text-blue-500"
+                    disabled={isLoading}
+                  >
+                    {register ? "Login" : "Register"}
+                  </button>
+                </p>
+              </form>
+            </main>
+          </section>
+        </dialog>
+      </>,
       modal
     );
   } else {
