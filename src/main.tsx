@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Auth, Blog, CurriculumVitae } from "./pages";
+import { Blog, CurriculumVitae } from "./pages";
 import App from "./App";
 import { AuthProvider } from "./providers";
 
@@ -22,10 +22,6 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
-      },
-      {
-        path: "/auth",
-        element: <Auth />,
       },
     ],
   },
