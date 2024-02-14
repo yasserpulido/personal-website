@@ -8,7 +8,7 @@ import {
   updatePassword,
 } from "firebase/auth";
 import { auth, db } from "./firebase";
-import { ref, set } from "firebase/database";
+import { get, ref, set } from "firebase/database";
 
 export const doCreateUserWithEmailAndPassword = async (
   email: string,
@@ -75,14 +75,12 @@ export const doSignInWithEmailAndPassword = async (
       if (errorCode === "auth/invalid-credential") {
         return {
           error: true,
-          message:
-            "Invalid credentials. Please verify and try again.",
+          message: "Invalid credentials. Please verify and try again.",
         };
       } else {
         return {
           error: true,
-          message:
-            "Unknown error. Please try again later.",
+          message: "Unknown error. Please try again later.",
         };
       }
     } else {
@@ -119,4 +117,21 @@ export const doSendEmailVerification = async () => {
   return await sendEmailVerification(auth.currentUser, {
     url: `${window.location.origin}/home`,
   });
+};
+
+export const getUserRole = async (uid: string) => {
+  const userRef = ref(db, `users/${uid}`);
+
+  try {
+    const snapshot = await get(userRef);
+    const userInfo = snapshot.val();
+    if (userInfo && userInfo.role) {
+      return userInfo.role;
+    }
+
+    return null;
+  } catch (error) {
+    console.error("Error fetching user role:", error);
+    return null;
+  }
 };
