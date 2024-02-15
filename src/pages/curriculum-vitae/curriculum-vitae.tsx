@@ -5,22 +5,22 @@ const CurriculumVitae = () => {
         <h1 className="text-lg text-center">About me</h1>
         <div className="flex flex-col gap-4">
           <p className="leading-relaxed">
-            Hey there!, my name is <span className="font-bold">Yasser</span>. In
-            the beginning, I worked as Full-Stack Developer and that role helped
-            me to learn about how works a software from the database to the
-            client side. Today, I'm a passionate{" "}
+            Hey there! My name is <span className="font-bold">Yasser</span>. In
+            the beginning, I worked as a Full-Stack Developer and this role
+            helped me to learn about how a software works from the database to
+            the client side. Today, I'm a passionate{" "}
             <span className="font-bold">Front-End (React) Developer</span>, with
             the goal of creating and innovating web applications that offer
-            exceptional user experiences, using differents frameworks and
-            libraries relate to. Also, I pride myself on applying good practices
-            and tools that facilitate the use and development of web
+            exceptional user experiences, using different frameworks and
+            libraries related to. Also, I pride myself on applying best
+            practices and tools that facilitate the use and development of web
             applications.
           </p>
           <p className="leading-relaxed">
-            Outside of work, I constantly study to keep up with the technologies
-            related to application development. I am a lover of cinema,
-            fantastic literature, sports practice, exercise and, of course, I
-            enjoy a good cup of coffee.
+            Outside of work, I am constantly studying to keep up with the new
+            technologies related to application development. I am a lover of
+            cinema, fantastic literature, sports practice, exercise and, of
+            course, I enjoy a good cup of coffee.
           </p>
         </div>
       </header>

@@ -12,9 +12,26 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.post-wrapper img,
+.ql-editor img {
+  width: 100%;
+}
+
+#toast {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 10;
+  bottom: 1rem;
+  right: 1rem;
+  position: fixed;
+}
+
 @keyframes slideInDown {
   from {
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
   to {
     transform: translateY(0);

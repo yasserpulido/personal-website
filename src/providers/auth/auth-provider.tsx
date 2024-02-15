@@ -34,14 +34,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const initializeUser = async (user: User | null) => {
     if (user) {
       const uid = user.uid;
-      
+
       const userRole = await getUserRole(uid);
 
-      setUserRole(userRole)
+      setUserRole(userRole);
 
       setCurrentUser({ ...user });
       setUserLoggedIn(true);
     } else {
+      setUserRole(null);
       setCurrentUser(null);
       setUserLoggedIn(false);
     }
@@ -49,7 +50,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   return (
-    <AuthContext.Provider value={{ currentUser, userLoggedIn, isLoading, userRole }}>
+    <AuthContext.Provider
+      value={{ currentUser, userLoggedIn, isLoading, userRole }}
+    >
       {children}
     </AuthContext.Provider>
   );

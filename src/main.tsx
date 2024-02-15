@@ -4,7 +4,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Blog, CurriculumVitae, Post, PostForm } from "./pages";
 import App from "./App";
-import { AuthProvider } from "./providers";
+import { AuthProvider, BlogProvider } from "./providers";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
         element: <PostForm />,
       },
       {
+        path: "/blog/post/edit-post/:id",
+        element: <PostForm />,
+      },
+      {
         path: "/blog/post/:id",
         element: <Post />,
       },
@@ -38,7 +42,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <BlogProvider>
+        <RouterProvider router={router} />
+      </BlogProvider>
     </AuthProvider>
   </React.StrictMode>
 );

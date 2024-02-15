@@ -10,7 +10,6 @@ import { Toast } from "../toast";
 import { Toast as ToastType } from "../../types";
 
 const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
-  const [register, setRegister] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const dialog = useRef<HTMLDialogElement | null>(null);
   const content = useRef<HTMLDivElement | null>(null);
@@ -56,26 +55,14 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
     try {
       setIsLoading(true);
 
-      if (register) {
-        const result = await doCreateUserWithEmailAndPassword(email, password);
+      const result = await doSignInWithEmailAndPassword(email, password);
 
-        closeModal();
+      closeModal();
 
-        if (result.status === "success") {
-          setToast({ type: "success", message: result.message });
-        } else {
-          setToast({ type: "error", message: result.message });
-        }
+      if (!result.error) {
+        setToast({ type: "success", message: result.message });
       } else {
-        const result = await doSignInWithEmailAndPassword(email, password);
-
-        closeModal();
-
-        if (!result.error) {
-          setToast({ type: "success", message: result.message });
-        } else {
-          setToast({ type: "error", message: result.message });
-        }
+        setToast({ type: "error", message: result.message });
       }
     } catch (error) {
       closeModal();
@@ -116,9 +103,7 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
         >
           <section ref={content} className="p-14 flex flex-col gap-12">
             <header className="text-center">
-              <h1 className="text-2xl font-bold">
-                {register ? "Register" : "Login"}
-              </h1>
+              <h1 className="text-2xl font-bold">Login</h1>
             </header>
             <main>
               <form className="flex flex-col gap-12" onSubmit={handleSubmit}>
@@ -146,16 +131,6 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
                       required
                       placeholder="type your password here"
                     />
-                    {!register && (
-                      <p className="text-sm text-right">
-                        <button
-                          type="button"
-                          className="underline text-blue-500"
-                        >
-                          Forgot password?
-                        </button>
-                      </p>
-                    )}
                   </div>
                 </div>
                 <button
@@ -165,21 +140,8 @@ const ModalAuth = forwardRef<ModalAuthMethods>((_, ref) => {
                   type="submit"
                   disabled={isLoading}
                 >
-                  {register ? "Register" : "Login"}
+                  Login
                 </button>
-                <p className="text-center">
-                  {register
-                    ? "Already have an account?"
-                    : "Don't have an account?"}{" "}
-                  <button
-                    type="button"
-                    onClick={() => setRegister((prevState) => !prevState)}
-                    className="underline text-blue-500"
-                    disabled={isLoading}
-                  >
-                    {register ? "Login" : "Register"}
-                  </button>
-                </p>
               </form>
             </main>
           </section>

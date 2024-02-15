@@ -38,7 +38,7 @@ export const doCreateUserWithEmailAndPassword = async (
     if (error instanceof Error) {
       return { status: "error", message: error.message };
     } else {
-      return { status: "error", message: "An unknown error occurred" };
+      return { status: "error", message: "An unknown error occurred." };
     }
   }
 };
@@ -69,8 +69,6 @@ export const doSignInWithEmailAndPassword = async (
   } catch (error) {
     if (typeof error === "object" && error !== null && "code" in error) {
       const errorCode = (error as { code: string }).code;
-
-      console.log(errorCode);
 
       if (errorCode === "auth/invalid-credential") {
         return {
@@ -131,7 +129,6 @@ export const getUserRole = async (uid: string) => {
 
     return null;
   } catch (error) {
-    console.error("Error fetching user role:", error);
     return null;
   }
 };

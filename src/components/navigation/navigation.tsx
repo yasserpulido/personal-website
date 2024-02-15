@@ -61,7 +61,7 @@ const Navigation = () => {
   const signOut = () => {
     doSignOut();
     closeModalConfirmation();
-    setToast({ message: "You have signed out", type: "success" });
+    setToast({ message: "You have signed out.", type: "success" });
   };
 
   return (

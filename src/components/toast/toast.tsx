@@ -33,7 +33,7 @@ const Toast = ({ status, reset }: ToastProps) => {
 
   if (toast) {
     return createPortal(
-      <div className="fixed z-10 top-6 right-6 animate-slide-in-down">
+      <div className="animate-slide-in-down">
         <div
           className={`${toastStyle} px-4 py-2 min-w-40 rounded shadow shadow-black text-white`}
         >
