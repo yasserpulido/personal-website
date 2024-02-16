@@ -1,10 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import {
-  doCreateUserWithEmailAndPassword,
-  doSignInWithEmailAndPassword,
-} from "../../utils/auth";
+import { doSignInWithEmailAndPassword } from "../../utils/auth";
 import { ModalAuthMethods } from "../../types";
 import { Toast } from "../toast";
 import { Toast as ToastType } from "../../types";
