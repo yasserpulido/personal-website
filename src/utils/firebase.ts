@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBVjwe2QB0y-WcQAu0-5a9IY8CTHdTiU90",
-  authDomain: "yasser-pulido-personal-website.firebaseapp.com",
-  projectId: "yasser-pulido-personal-website",
-  storageBucket: "yasser-pulido-personal-website.appspot.com",
-  messagingSenderId: "817180800097",
-  appId: "1:817180800097:web:f61ef96bc10c91a4bde620",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
