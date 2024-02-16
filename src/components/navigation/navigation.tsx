@@ -62,6 +62,7 @@ const Navigation = () => {
     doSignOut();
     closeModalConfirmation();
     setToast({ message: "You have signed out.", type: "success" });
+    setIsMenuOpen(false);
   };
 
   return (
@@ -77,7 +78,7 @@ const Navigation = () => {
             <Menu />
           </button>
           {isMenuOpen && (
-            <nav className="absolute bg-white w-full h-screen top-0 left-0 flex items-center justify-center">
+            <nav className="absolute z-10 bg-white w-full h-screen top-0 left-0 flex items-center justify-center">
               <div className="absolute top-0 right-0 px-6 py-6">
                 <button onClick={() => setIsMenuOpen(false)}>
                   <Close />
