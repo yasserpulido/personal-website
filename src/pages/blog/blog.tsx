@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
+import moment from "moment";
+
 import { useAuth } from "../../hooks";
 import { useBlog } from "../../hooks/use-blog/use-blog";
 
 const Blog = () => {
   const { userRole } = useAuth();
   const { posts } = useBlog();
+
+  const postSortedByDate = posts.sort((a, b) => {
+    const dateA = moment(a.dateOfCreation);
+    const dateB = moment(b.dateOfCreation);
+
+    if (dateA.isBefore(dateB)) {
+      return 1;
+    } else if (dateA.isAfter(dateB)) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
 
   return (
     <article className="my-20 flex flex-col gap-12">
@@ -20,11 +35,11 @@ const Blog = () => {
           </div>
         )}
       </header>
-      {posts.length === 0 ? (
+      {postSortedByDate.length === 0 ? (
         <p>No posts yet</p>
       ) : (
         <section className="flex flex-col gap-12">
-          {posts.map((post) => (
+          {postSortedByDate.map((post) => (
             <div key={post.id}>
               <Link
                 to={`/blog/post/${post.id}`}
