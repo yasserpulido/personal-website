@@ -131,24 +131,44 @@ const CurriculumVitae = () => {
         </article>
       </section>
       <hr className="my-10" />
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-8">
         <h1 className="text-lg text-center">Personal Projects</h1>
-        <div>
-          <h2 className="text-md font-light">Cinema Memory</h2>
-        </div>
-        <p className="leading-relaxed">
-          Cinema Memory is a personal website where I post about films I have
-          watched. The website is built with React, Next, TypeScript, and own
-          Design System, and the backend is based on Python with Django.{" "}
-          <a
-            href="https://www.cinemamemory.com/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-sm text-right underline"
-          >
-            (Click here to vist the website)
-          </a>
-        </p>
+        <article className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-md font-light">Cinema Memory</h2>
+          </div>
+          <p className="leading-relaxed">
+            Cinema Memory is a personal website where I post about films I have
+            watched. The website is built with React, Next, TypeScript, and own
+            Design System, and the backend is based on Python with Django.{" "}
+            <a
+              href="https://www.cinemamemory.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm text-right underline"
+            >
+              (Click here to vist the website)
+            </a>
+          </p>
+        </article>
+        <article className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-md font-light">Japanese Flashcards</h2>
+          </div>
+          <p className="leading-relaxed">
+            Japanese Flashcards is a personal project where I can study Japanese
+            with flashcards. The website is built with React, TypeScript, and
+            Tailwinds. Progresive Web Application is available.{" "}
+            <a
+              href="https://flashcards.yasserpulido.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm text-right underline"
+            >
+              (Click here to vist the website)
+            </a>
+          </p>
+        </article>
       </section>
     </article>
   );
