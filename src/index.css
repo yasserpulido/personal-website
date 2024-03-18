@@ -12,6 +12,12 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
 .post-wrapper img,
 .ql-editor img {
   width: 100%;
