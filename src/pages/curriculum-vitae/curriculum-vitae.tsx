@@ -169,6 +169,24 @@ const CurriculumVitae = () => {
             </a>
           </p>
         </article>
+        <article className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-md font-light">Anwar Components</h2>
+          </div>
+          <p className="leading-relaxed">
+            This is a collection of components that I have created for my
+            personal projects. I have decided to share them with the community.
+            I hope you find them useful.{" "}
+            <a
+              href="https://www.npmjs.com/package/anwar-components"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm text-right underline"
+            >
+              (Click here to vist npm package)
+            </a>
+          </p>
+        </article>
       </section>
     </article>
   );
