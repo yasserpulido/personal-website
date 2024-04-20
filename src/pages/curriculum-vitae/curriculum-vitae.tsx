@@ -153,14 +153,15 @@ const CurriculumVitae = () => {
         </article>
         <article className="flex flex-col gap-4">
           <div>
-            <h2 className="text-md font-light">Japanese Flashcards</h2>
+            <h2 className="text-md font-light">Kyronga</h2>
           </div>
           <p className="leading-relaxed">
-            Japanese Flashcards is a personal project where I can study Japanese
-            with flashcards. The website is built with React, TypeScript, and
-            Tailwinds. Progresive Web Application is available.{" "}
+            Kyronga is a personal project where I can study Japanese with
+            flashcards. The website is built with React, TypeScript, and
+            Tailwinds. Progresive Web Application is available. Also, it was
+            migrated to use in Android with React Native.{" "}
             <a
-              href="https://flashcards.yasserpulido.com/"
+              href="https://www.kyronga.com/"
               target="_blank"
               rel="noreferrer noopener"
               className="text-sm text-right underline"
