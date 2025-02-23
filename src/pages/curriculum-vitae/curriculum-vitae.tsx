@@ -5,22 +5,13 @@ const CurriculumVitae = () => {
         <h1 className="text-lg text-center">About me</h1>
         <div className="flex flex-col gap-4">
           <p className="leading-relaxed">
-            Hey there! My name is <span className="font-bold">Yasser</span>. In
-            the beginning, I worked as a Full-Stack Developer and this role
-            helped me to learn about how a software works from the database to
-            the client side. Today, I'm a passionate{" "}
-            <span className="font-bold">Front-End (React) Developer</span>, with
-            the goal of creating and innovating web applications that offer
-            exceptional user experiences, using different frameworks and
-            libraries related to. Also, I pride myself on applying best
-            practices and tools that facilitate the use and development of web
-            applications.
-          </p>
-          <p className="leading-relaxed">
-            Outside of work, I am constantly studying to keep up with the new
-            technologies related to application development. I am a lover of
-            cinema, fantastic literature, sports practice, exercise and, of
-            course, I enjoy a good cup of coffee.
+            My name is <span className="font-bold">Yasser</span>. I am a
+            passionate Frontend Developer specializing in React, dedicated to
+            creating high- quality web applications with a focus on performance,
+            accessibility, and user experience. With over five years of
+            experience in companies across Venezuela, Argentina, and the United
+            States, I continuously improve my skills by staying up to date with
+            the latest frontend technologies and best practices.
           </p>
         </div>
       </header>
@@ -47,18 +38,20 @@ const CurriculumVitae = () => {
         <h1 className="text-lg text-center">Experiences</h1>
         <article className="flex flex-col gap-4">
           <div>
-            <h2 className="text-md font-light">RH Tecnologías S.A.</h2>
+            <h2 className="text-md font-light">
+              Santander Tecnología Argentina
+            </h2>
             <h3 className="text-md font-medium">Front-End Developer</h3>
             <p className="text-sm font-light">sep 2023 - current</p>
           </div>
           <p className="leading-relaxed">
-            The client <span className="font-bold">Santander Rio</span> is a
-            multinational financial services company. As Front-End Developer, I
-            have been refactoring a web application where the users fill out and
-            submit forms about the different services that the bank has. The
-            project in addition to refactor using best practice, patterns, and
-            architecture with React also was migrated to TypeScript and created
-            unit test to has 80% coverage as minimum.
+            At Santander Tecnología Argentina, I am part of the frontend
+            development team, creating innovative solutions for web applications
+            and tools in the bank's services. My work focuses on developing and
+            optimizing interfaces using React.js, TypeScript, and Jest, ensuring
+            performance, accessibility, and excellent user experience.
+            Additionally, I work closely with backend and design teams to ensure
+            efficient system integration.
           </p>
           <p className="text-sm text-right">Argentina</p>
         </article>
@@ -69,11 +62,14 @@ const CurriculumVitae = () => {
             <p className="text-sm font-light">sep 2022 - sep 2023</p>
           </div>
           <p className="leading-relaxed">
-            Real Trends is a platform that help to their user has a better
-            experiencies in their e-commerce services. I developed tools for
-            Tienda (shop) project that is about user's e-commerce, using React
-            with Hooks and TypeScript, MobX-State-Tree, Cypress, Storybook with
-            Design Systems, Ubuntu, and Dockers.
+            At Real Trends, I was part of the frontend development team,
+            contributing to the design and optimization of advanced tools for
+            Mercado Libre sellers' analysis and management. I developed
+            intuitive and efficient interfaces using React.js, TypeScript, and
+            styled-components, ensuring a smooth user experience. Additionally,
+            I worked with Mobx-state-tree, Storybook, and Cypress.io to improve
+            code quality and maintainability, and collaborated in Docker and
+            Linux-based environments.
           </p>
           <p className="text-sm text-right">Argentina</p>
         </article>
@@ -84,13 +80,17 @@ const CurriculumVitae = () => {
             <p className="text-sm font-light">jan 2021 - mar 2022</p>
           </div>
           <p className="leading-relaxed">
-            The client{" "}
-            <span className="font-bold">Johnson Controls International</span> is
-            an american company that offers products and services to optimize
-            energy efficiency in buildings, automotive and interior batteries,
-            and automotive electronic systems. I worked in the differents web
-            application with frameworks and libraries like .NET Core, Angular
-            and React.
+            At MAS Global Consulting, I was part of the full stack development
+            team, contributing to the creation and optimization of solutions for
+            Johnson Controls International, a company focused on energy
+            efficiency and automotive electronic systems. I worked on five
+            projects using ASP.NET MVC 5 (.NET Framework 4.8) with Bootstrap and
+            jQuery, as well as solutions based on .NET Core 3.0 and 3.1,
+            integrating Angular with TypeScript and JavaScript with jQuery.
+            Additionally, I contributed to a project using .NET 5 and Angular
+            with TypeScript. I collaborated in the implementation of Team
+            Foundation Service for version control, and we followed the SCRUM
+            methodology for agile project management.
           </p>
           <p className="text-sm text-right">United States</p>
         </article>
@@ -98,34 +98,19 @@ const CurriculumVitae = () => {
           <div>
             <h2 className="text-md font-light">Edenred Argentina S.A.</h2>
             <h3 className="text-md font-medium">Full-Stack Developer</h3>
-            <p className="text-sm font-light">aug 2020 - dec 2020</p>
+            <p className="text-sm font-light">jan 2020 - dec 2020</p>
           </div>
           <p className="leading-relaxed">
-            Alta is about a web application to registry new client for the
-            different solutions related to employee benefits, meal vouchers,
-            loyalty programs, flee and mobility and corporate payment. The web
-            application was migrated to .NET Core 3.1 using Visual Studio 2019
-            based on Onion Architecture. Using on the frontend with React and
-            Redux with TypeScript, Bootstrap 4 and PrimeReact 5. Also, Data
-            Model with SQLServer 2012 and Git as Version
-          </p>
-          <p className="text-sm text-right">Argentina</p>
-        </article>
-        <article className="flex flex-col gap-4">
-          <div>
-            <h2 className="text-md font-light">RH Tecnologías S.A.</h2>
-            <h3 className="text-md font-medium">Full-Stack Developer</h3>
-            <p className="text-sm font-light">jan 2020 - jul 2020</p>
-          </div>
-          <p className="leading-relaxed">
-            Development of the new Comercio website to{" "}
-            <span className="font-bold">Edenred Argentina S.A.</span> as client.
-            The web is about manage the client account, monitor payments, and
-            access all the advantages and benefits that Edenred offers for being
-            part of its network. The project was based on .NET Core 3.1 with
-            Visual Studio 2019. Using React and Redux with TypeScript, Bootstrap
-            4.0 and PrimeReact 4 as framework design. Also, SQL Server 2012 for
-            database, and version control Team Foundation Service
+            At Edenred Argentina, I was part of the full stack development team,
+            contributing to the creation and optimization of digital solutions
+            for corporate benefits management, meal vouchers, loyalty programs,
+            and business payments. I worked on web platform development using
+            .NET Core 3.1 and .NET 5, following an Onion Architecture approach
+            and developed in Visual Studio 2019. On the frontend, I implemented
+            solutions with React and Redux, integrating TypeScript, Bootstrap 4,
+            and PrimeReact 5. I also collaborated on data modeling with SQL
+            Server 2012 and used Git and Team Foundation Service for version
+            control.
           </p>
           <p className="text-sm text-right">Argentina</p>
         </article>
