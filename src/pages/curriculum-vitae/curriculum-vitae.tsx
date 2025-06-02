@@ -2,149 +2,275 @@ const CurriculumVitae = () => {
   return (
     <article className="my-20">
       <header className="flex flex-col gap-8">
-        <h1 className="text-lg text-center">About me</h1>
+        <h1 className="text-lg text-center">Acerca de</h1>
         <div className="flex flex-col gap-4">
           <p className="leading-relaxed">
-            My name is <span className="font-bold">Yasser</span>. I am a
-            passionate Frontend Developer specializing in React, dedicated to
-            creating high- quality web applications with a focus on performance,
-            accessibility, and user experience. With over five years of
-            experience in companies across Venezuela, Argentina, and the United
-            States, I continuously improve my skills by staying up to date with
-            the latest frontend technologies and best practices.
+            Mi nombre es <span className="font-bold">Yasser</span>. Soy{" "}
+            <span className="font-bold">Desarrollador Frontend</span> con más de
+            cinco años de experiencia en la creación de aplicaciones web de alta
+            calidad, especializado en <span className="font-bold">React</span>.
+            Apasionado por la performance, accesibilidad y experiencia de
+            usuario. Experiencia internacional trabajando en empresas de
+            Venezuela, Argentina y Estados Unidos. En constante aprendizaje y
+            actualización en tecnologías modernas de frontend.
           </p>
         </div>
       </header>
       <hr className="my-10" />
       <section className="flex flex-col gap-4">
-        <h1 className="text-lg text-center">Education</h1>
+        <h1 className="text-lg text-center">Educación</h1>
         <div>
-          <h2 className="text-md font-medium">Systems Engineering</h2>
+          <h2 className="text-md font-light">
+            Instituto Universitario Politécnico Santiago Mariño
+          </h2>
+          <h3 className="text-md font-medium">Ingenieria de Sistemas</h3>
           <p className="text-sm font-light">sep 2009 - feb 2016</p>
         </div>
-        <p className="leading-relaxed">
-          Here, I learned about{" "}
-          <span className="font-bold">Systems Engineering</span> that deals with
-          the design, programming, implementation and maintenance of systems.
-          Incorporating modern methods and techniques to optimize performance,
-          control and correct the different stages of a project. Also
-          formulating the plans that allow integrating different projects of a
-          general development program.
-        </p>
         <p className="text-sm text-right">Venezuela</p>
       </section>
       <hr className="my-10" />
       <section className="flex flex-col gap-8">
-        <h1 className="text-lg text-center">Experiences</h1>
+        <h1 className="text-lg text-center">Experiencia Laboral</h1>
         <article className="flex flex-col gap-4">
           <div>
             <h2 className="text-md font-light">
               Santander Tecnología Argentina
             </h2>
-            <h3 className="text-md font-medium">Front-End Developer</h3>
-            <p className="text-sm font-light">sep 2023 - current</p>
+            <h3 className="text-md font-medium">Desarrollador Frontend</h3>
+            <p className="text-sm font-light">sep 2023 - may 2025</p>
           </div>
-          <p className="leading-relaxed">
-            At Santander Tecnología Argentina, I am part of the frontend
-            development team, creating innovative solutions for web applications
-            and tools in the bank's services. My work focuses on developing and
-            optimizing interfaces using React.js, TypeScript, and Jest, ensuring
-            performance, accessibility, and excellent user experience.
-            Additionally, I work closely with backend and design teams to ensure
-            efficient system integration.
-          </p>
+          <ul className="list-disc pl-6">
+            <li>
+              Desarrollo del nuevo módulo de Términos y Condiciones del{" "}
+              <span className="font-bold">Homebanking</span>.
+            </li>
+            <li>
+              Refactorización de herramientas internas con{" "}
+              <span className="font-bold">React</span>, aplicando{" "}
+              <span className="font-bold">type safesty</span> y{" "}
+              <span className="font-bold">CI/CD</span>.
+            </li>
+            <li>
+              Cumplimiento de estándares: menos de 4% de duplicación de código y
+              más del 80% de cobertura de tests (
+              <span className="font-bold">Jest</span> y{" "}
+              <span className="font-bold">Cypress</span>).
+            </li>
+            <li>
+              Resolución de vulnerabilidades críticas y mejoras de seguridad en
+              el código <span className="font-bold">frontend</span>.
+            </li>
+            <li>
+              Implementación bajo metodología{" "}
+              <span className="font-bold">SCRUM</span> y control de versiones
+              con <span className="font-bold">GIT/GitLab</span>.
+            </li>
+          </ul>
           <p className="text-sm text-right">Argentina</p>
         </article>
         <article className="flex flex-col gap-4">
           <div>
             <h2 className="text-md font-light">Real Trends S.A.</h2>
-            <h3 className="text-md font-medium">Front-End Developer</h3>
+            <h3 className="text-md font-medium">Desarrolador Frontend</h3>
             <p className="text-sm font-light">sep 2022 - sep 2023</p>
           </div>
           <p className="leading-relaxed">
-            At Real Trends, I was part of the frontend development team,
-            contributing to the design and optimization of advanced tools for
-            Mercado Libre sellers' analysis and management. I developed
-            intuitive and efficient interfaces using React.js, TypeScript, and
-            styled-components, ensuring a smooth user experience. Additionally,
-            I worked with Mobx-state-tree, Storybook, and Cypress.io to improve
-            code quality and maintainability, and collaborated in Docker and
-            Linux-based environments.
+            <ul className="list-disc pl-6">
+              <li>
+                Desarrollo completo de la herramienta{" "}
+                <span className="font-bold">Tienda</span>, lanzada a producción
+                como alternativa a soluciones de Mercado Libre, donde los
+                vendedores creen su propia tienda online en minutos.
+              </li>
+              <li>
+                Construcción de un{" "}
+                <span className="font-bold">Design System</span> propio en
+                conjunto con el equipo de diseño para escalar la consistencia
+                visual.
+              </li>
+              <li>
+                Aplicación de estándares de{" "}
+                <span className="font-bold">pixel perfect</span>,{" "}
+                <span className="font-bold">accesibilidad</span> y{" "}
+                <span className="font-bold">UI adaptable</span> para optimizar
+                la experiencia del usuario.
+              </li>
+              <li>
+                implementación de{" "}
+                <span className="font-bold">internacionalización (i18n)</span> y
+                localización de la herramienta adaptándola para su uso en
+                Argentina, México y Brasil.
+              </li>
+              <li>
+                Implementé pruebas unitarias con{" "}
+                <span className="font-bold">Cypress</span> para garantizar
+                calidad y mantenimiento del código.
+              </li>
+              <li>
+                Implementación bajo metodología{" "}
+                <span className="font-bold">SCRUM</span> y control de versiones
+                con <span className="font-bold">GIT/GitHub</span>.
+              </li>
+            </ul>
           </p>
           <p className="text-sm text-right">Argentina</p>
         </article>
         <article className="flex flex-col gap-4">
           <div>
             <h2 className="text-md font-light">MAS Glogal Consulting</h2>
-            <h3 className="text-md font-medium">Full-Stack Developer</h3>
-            <p className="text-sm font-light">jan 2021 - mar 2022</p>
+            <h3 className="text-md font-medium">Desarrollador Full Stack</h3>
+            <p className="text-sm font-light">ene 2021 - mar 2022</p>
           </div>
           <p className="leading-relaxed">
-            At MAS Global Consulting, I was part of the full stack development
-            team, contributing to the creation and optimization of solutions for
-            Johnson Controls International, a company focused on energy
-            efficiency and automotive electronic systems. I worked on five
-            projects using ASP.NET MVC 5 (.NET Framework 4.8) with Bootstrap and
-            jQuery, as well as solutions based on .NET Core 3.0 and 3.1,
-            integrating Angular with TypeScript and JavaScript with jQuery.
-            Additionally, I contributed to a project using .NET 5 and Angular
-            with TypeScript. I collaborated in the implementation of Team
-            Foundation Service for version control, and we followed the SCRUM
-            methodology for agile project management.
+            <ul className="list-disc pl-6">
+              <li>
+                Desarrollo de módulos clave como{" "}
+                <span className="font-bold">carrito de compras</span>,{" "}
+                <span className="font-bold">facturación</span> y{" "}
+                <span className="font-bold">ventas</span> para la plataforma
+                global de productos.
+              </li>
+              <li>
+                Participación en soluciones hibridas usando con{" "}
+                <span className="font-bold">.NET Framework</span>,{" "}
+                <span className="font-bold">.NET Core</span> y{" "}
+                <span className="font-bold">Angular/React</span>.
+              </li>
+              <li>
+                Implementación de{" "}
+                <span className="font-bold">internacionalización (i18n)</span> y
+                localización de interfaces para soporte multirregión.
+              </li>
+              <li>
+                Desarrollé pruebas unitarias utilizando{" "}
+                <span className="font-bold">MSTest</span>,{" "}
+                <span className="font-bold">Jasmine</span>,{" "}
+                <span className="font-bold">Karma</span> y{" "}
+                <span className="font-bold">Jest</span> para asegurar
+                confiabilidad de los módulos críticos.
+              </li>
+              <li>
+                Implementación bajo metodología{" "}
+                <span className="font-bold">SCRUM</span> y control de versiones
+                con <span className="font-bold">TFS</span>.
+              </li>
+            </ul>
           </p>
-          <p className="text-sm text-right">United States</p>
+          <p className="text-sm text-right">Estados Unidos</p>
         </article>
         <article className="flex flex-col gap-4">
           <div>
             <h2 className="text-md font-light">Edenred Argentina S.A.</h2>
-            <h3 className="text-md font-medium">Full-Stack Developer</h3>
-            <p className="text-sm font-light">jan 2020 - dec 2020</p>
+            <h3 className="text-md font-medium">Desarrollador Full Stack</h3>
+            <p className="text-sm font-light">ene 2020 - dic 2020</p>
           </div>
-          <p className="leading-relaxed">
-            At Edenred Argentina, I was part of the full stack development team,
-            contributing to the creation and optimization of digital solutions
-            for corporate benefits management, meal vouchers, loyalty programs,
-            and business payments. I worked on web platform development using
-            .NET Core 3.1 and .NET 5, following an Onion Architecture approach
-            and developed in Visual Studio 2019. On the frontend, I implemented
-            solutions with React and Redux, integrating TypeScript, Bootstrap 4,
-            and PrimeReact 5. I also collaborated on data modeling with SQL
-            Server 2012 and used Git and Team Foundation Service for version
-            control.
-          </p>
+          <ul className="list-disc pl-6">
+            <li>
+              Migración de herramientas legacy (
+              <span className="font-bold">.NET Framework</span>) a plataformas
+              web modernas con <span className="font-bold">.NET Core</span> y{" "}
+              <span className="font-bold">React</span>.
+            </li>
+            <li>
+              Desarrollo del sistema de alta de clientes, integrando{" "}
+              <span className="font-bold">SQL Server</span> y arquitectura
+              orientada en capas.
+            </li>
+            <li>
+              Implementé pruebas unitarias con herramientas de testing de
+              Microsoft para backend en{" "}
+              <span className="font-bold">.NET Core</span> y{" "}
+              <span className="font-bold">Jest</span> con{" "}
+              <span className="font-bold">React</span>.
+            </li>
+            <li>
+              Implementación bajo metodología{" "}
+              <span className="font-bold">SCRUM</span> y control de versiones
+              con <span className="font-bold">TFS</span>.
+            </li>
+          </ul>
           <p className="text-sm text-right">Argentina</p>
+        </article>
+        <article className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-md font-light">Santa Rita de Cascia C.A.</h2>
+            <h3 className="text-md font-medium">Desarrollador .NET</h3>
+            <p className="text-sm font-light">ene 2016 - sep 2016</p>
+          </div>
+          <ul className="list-disc pl-6">
+            <li>
+              Participación en el desarrollo de un sistema de control
+              veterinario para ganado.
+            </li>
+            <li>
+              Compatibilidad con lectores de identificación electrónica{" "}
+              <span className="font-bold">ALLFLEX</span> para trazabilidad del
+              ganado.
+            </li>
+            <li>
+              Desarrollo con <span className="font-bold">.NET Framework 4</span>{" "}
+              y <span className="font-bold">WinForms (C#)</span>.
+            </li>
+            <li>
+              Implementación de base de datos{" "}
+              <span className="font-bold">SQL</span> para gestión de la
+              información.
+            </li>
+          </ul>
+          <p className="text-sm text-right">Venezuela</p>
+        </article>
+        <article className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-md font-light">Solo Sistemas C.A.</h2>
+            <h3 className="text-md font-medium">Desarrollador .NET</h3>
+            <p className="text-sm font-light">nov 2014 - dic 2016</p>
+          </div>
+          <ul className="list-disc pl-6">
+            <li>
+              Colaboración en la creación de un sistema de control de código
+              fuente y control de acceso a la empresa.
+            </li>
+            <li>
+              Desarrollo con <span className="font-bold">.NET Framework 4</span>{" "}
+              y <span className="font-bold">WinForms (C#)</span>.
+            </li>
+            <li>
+              Uso de base de datos <span className="font-bold">SQL</span> para
+              almacenamiento de datos.
+            </li>
+          </ul>
+          <p className="text-sm text-right">Venezuela</p>
         </article>
       </section>
       <hr className="my-10" />
       <section className="flex flex-col gap-8">
-        <h1 className="text-lg text-center">Personal Projects</h1>
+        <h1 className="text-lg text-center">Proyectos Personales Destacados</h1>
         <article className="flex flex-col gap-4">
           <div>
-            <h2 className="text-md font-light">Cinema Memory</h2>
+            <h2 className="text-md font-light">
+              Kyronga – App educativa para aprender japonés
+            </h2>
           </div>
-          <p className="leading-relaxed">
-            Cinema Memory is a personal website where I post about films I have
-            watched. The website is built with React, Next, TypeScript, and own
-            Design System, and the backend is based on Python with Django.{" "}
-            <a
-              href="https://www.cinemamemory.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-sm text-right underline"
-            >
-              (Click here to vist the website)
-            </a>
-          </p>
-        </article>
-        <article className="flex flex-col gap-4">
-          <div>
-            <h2 className="text-md font-light">Kyronga</h2>
-          </div>
-          <p className="leading-relaxed">
-            Kyronga is a personal project where I can study Japanese with
-            flashcards. The website is built with React, TypeScript, and
-            Tailwinds. Progresive Web Application is available. Also, it was
-            migrated to use in Android with React Native.{" "}
+          <ul className="list-disc pl-6">
+            <li>
+              Desarrollo completo de una app móvil en{" "}
+              <span className="font-bold">React Native</span> para aprender
+              japonés de forma visual.
+            </li>
+            <li>
+              Incluye práctica de silabarios (hiragana, katakana), kanji y
+              escritura a mano.
+            </li>
+            <li>
+              Funcionalidad para marcar tarjetas difíciles y reforzar la
+              memoria.
+            </li>
+            <li>
+              Publicada en <span className="font-bold">Google Play Store</span>{" "}
+              para uso libre.
+            </li>
+          </ul>
+          <p className="text-sm text-right">
             <a
               href="https://www.kyronga.com/"
               target="_blank"
@@ -157,12 +283,62 @@ const CurriculumVitae = () => {
         </article>
         <article className="flex flex-col gap-4">
           <div>
-            <h2 className="text-md font-light">Anwar Components</h2>
+            <h2 className="text-md font-light">
+              Cinema Memory – Sitio personal sobre películas
+            </h2>
           </div>
-          <p className="leading-relaxed">
-            This is a collection of components that I have created for my
-            personal projects. I have decided to share them with the community.
-            I hope you find them useful.{" "}
+          <ul className="list-disc pl-6">
+            <li>
+              Desarrollo de un sitio web personal donde publico reseñas breves
+              de películas que he visto.
+            </li>
+            <li>
+              Implementado con <span className="font-bold">React</span> y{" "}
+              <span className="font-bold">Next.js</span>, utilizando{" "}
+              <span className="font-bold">TypeScript</span> y un{" "}
+              <span className="font-bold">Design System</span> propio.
+            </li>
+            <li>
+              Integración con una <span className="font-bold">API pública</span>{" "}
+              para obtener datos de películas.
+            </li>
+            <li>Enfocado en rendimiento, UI simple y navegación rápida.</li>
+          </ul>
+          <p className="text-sm text-right">
+            <a
+              href="https://www.cinemamemory.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm text-right underline"
+            >
+              (Click here to vist the website)
+            </a>
+          </p>
+        </article>
+        <article className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-md font-light">
+              anwar-components – Librería de componentes para React
+            </h2>
+          </div>
+          <ul className="list-disc pl-6">
+            <li>
+              Desarrollo de una librería de{" "}
+              <span className="font-bold">componentes UI</span> reutilizables
+              para proyectos personales en React.
+            </li>
+            <li>
+              Construida con <span className="font-bold">TypeScript</span> y
+              publicada en <span className="font-bold">NPM</span> para compartir
+              con la comunidad.
+            </li>
+            <li>
+              Incluye componentes visuales con estilos desacoplados, enfocados
+              en simplicidad y personalización.
+            </li>
+            <li>Usada activamente en proyectos propios como Cinema Memory.</li>
+          </ul>
+          <p className="text-sm text-right">
             <a
               href="https://www.npmjs.com/package/anwar-components"
               target="_blank"
