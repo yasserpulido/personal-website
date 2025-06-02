@@ -350,6 +350,27 @@ const CurriculumVitae = () => {
           </p>
         </article>
       </section>
+      <hr className="my-10" />
+      <section className="flex flex-col gap-8">
+        <h1 className="text-lg text-center">Tecnologías</h1>
+        <p>
+          <span className="font-bold">Frontend</span>: React, React Native,
+          TypeScript, JavaScript (ES6+), HTML5, CSS3, SASS, Zustand, Redux,
+          styled-components, librerías UI.
+        </p>
+        <p>
+          <span className="font-bold">Testing</span>: Jest, Cypress, Jasmine,
+          Karma.
+        </p>
+        <p>
+          <span className="font-bold">Herramientas</span>: Git, GitHub, GitLab,
+          Docker, CI/CD.
+        </p>
+        <p>
+          <span className="font-bold">Otros</span>: SQL Server, MongoDB, Figma
+          (diseño UI), consumo de APIs REST.
+        </p>
+      </section>
     </article>
   );
 };
