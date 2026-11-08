@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# yasserpulido.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal personal landing page for Yasser Pulido, built with React, TypeScript, Vite, and Firebase Hosting.
 
-Currently, two official plugins are available:
+Professional details intentionally live in the downloadable PDF resumes rather than in the application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
 
-## Expanding the ESLint configuration
+- Node.js 18 or newer
+- npm
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Development and validation
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm ci
+npm run dev
+npm run lint
+npm run typecheck
+npm run build
+npm run preview
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Resume files
+
+Place the real PDF files in `public/` with these permanent names:
+
+- `public/cv-es.pdf`
+- `public/cv-en.pdf`
+- `public/cv-pt.pdf`
+
+To update professional experience, replace those files without changing the React application. Do not create placeholder PDFs or duplicate one language into another.
+
+## Deployment
+
+Firebase Hosting serves the generated `dist/` directory. Existing GitHub Actions workflows provide pull request previews and deployment from `main`. Run all validation commands and ensure all three PDFs are present before deploying.
