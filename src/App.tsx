@@ -27,20 +27,28 @@ function App() {
 
       <main>
         <section className="hero" aria-labelledby="intro-title">
-          <p className="eyebrow">Frontend Engineer</p>
+          <p className="eyebrow">Software Engineer</p>
           <h1 id="intro-title">Yasser Pulido</h1>
-          <p className="headline">Building modern, maintainable web experiences.</p>
+          <p className="name-note">
+            Professional name: Yasser Pulido · CV: Yasser Barzotto
+          </p>
+          <p className="headline">Building scalable, maintainable software.</p>
           <div className="hero-copy">
             <p>
-              I&apos;m a Frontend Engineer with extensive experience in React and
-              TypeScript, along with hands-on experience in Angular and Vue. I focus
-              on building scalable, accessible, and maintainable web applications,
-              with a strong interest in frontend architecture, performance, and
-              product engineering.
+              I&apos;m a Software Engineer with over 10 years of experience
+              developing frontend, backend, and full-stack solutions for
+              international markets.
             </p>
             <p>
-              Interested in remote frontend engineering opportunities and
-              frontend-focused full-stack development.
+              In recent years, I&apos;ve focused primarily on frontend engineering
+              with React and TypeScript, while maintaining hands-on experience with
+              Angular, Vue, Node.js, and C#/.NET.
+            </p>
+            <p>
+              My work includes software architecture, enterprise applications,
+              system modernization, API integrations, and AI-assisted development
+              practices to improve code quality, maintainability, and engineering
+              efficiency.
             </p>
           </div>
         </section>
