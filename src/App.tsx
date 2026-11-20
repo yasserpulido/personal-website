@@ -29,9 +29,6 @@ function App() {
         <section className="hero" aria-labelledby="intro-title">
           <p className="eyebrow">Software Engineer</p>
           <h1 id="intro-title">Yasser Pulido</h1>
-          <p className="name-note">
-            Professional name: Yasser Pulido · CV: Yasser Barzotto
-          </p>
           <p className="headline">Building scalable, maintainable software.</p>
           <div className="hero-copy">
             <p>
